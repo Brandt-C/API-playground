@@ -1,5 +1,24 @@
 {% extends 'index.html' %}
 
 {% block content %}
+<h1>Let's play with the Rick and Morty API!</h1>
+<h4>A random character:</h4>
+{% for c in new.chars %}
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4 justify-content-center">
+        <img src="{{new.chars[c].image}}" class="img-fluid rounded-start" alt="random Rick and Morty character image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{new.chars[c].name}}</h5>
+          <p class="card-text">Status: {{new.chars[c].status}}<br>Species: {{new.chars[c].species}}<br>Gender: {{new.chars[c].gender}}</p>
+          <p class="card-text"><small class="text-muted">Origin: {{new.chars[c].origin}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 
 {% endblock %}
+

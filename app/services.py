@@ -2,6 +2,7 @@ import requests as r
 from random import randrange
 
 
+
 class Char:
     def __init__(self, name, status, species, gender, origin, image, id):
         self.name = name
