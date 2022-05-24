@@ -11,3 +11,12 @@ h1 {
 body {
     background-color: rgb(241, 217, 189);
 }
+footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: small;
+    font-weight: 85;
+    position: fixed;
+    bottom: 0;
+    left: 45%;
+}
