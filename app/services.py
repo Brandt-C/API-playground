@@ -61,6 +61,37 @@ class CharDict:
             new_char = Char(name, status, species, gender, origin, image, id)
             self.chars[id] = new_char 
     
+class Episode:
+    def __init__(self, name, air_date, episode):
+        self.name = name
+        self.air_date = air_date
+        self.episode = episode
+        self.chars = []
+
+class EpisodeBuilder:
+    def __init__(self):
+        self.eps = {}
+
+    def load_ep(self, ep):
+        response = r.get('https://rickandmortyapi.com/api/episode/' + str(ep))
+        if response.status_code == 200:
+            data = response.json()
+        name = data['name']
+        air_date = data['air_date']
+        episode = data['episode']
+        chars = []
+        for c in data['characters']:
+            chars.append(int(c[42::]))
+        new_epi = Episode(name, air_date, episode)
+        new_epi.chars = chars
+        self.eps[ep] = new_epi
+        
+
+
+
+
+
+    
 
 
 

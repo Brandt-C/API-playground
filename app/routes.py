@@ -3,7 +3,7 @@ from flask import render_template
 import requests as r
 from random import randrange
 
-from app.services import CharDict
+from app.services import CharDict, EpisodeBuilder
 
 
 
@@ -15,5 +15,7 @@ def home():
 def rm():
     new = CharDict()
     new.add_rand_char()
+    epi = EpisodeBuilder()
+    epi.load_ep(1)
     
-    return render_template('rm.html', new=new)
+    return render_template('rm.html', new=new, epi=epi)
