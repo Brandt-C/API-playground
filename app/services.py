@@ -62,58 +62,39 @@ class CharDict:
             id = data[x]['id']
             new_char = Char(name, status, species, gender, origin, image, id)
             self.chars[id] = new_char 
+
+    # def view_chars(self):
+    #     for x in self.chars.values():
+    #         print(f'')
     
 class Episode:
-    def __init__(self, name, air_date, episode):
-        self.name = name
-        self.air_date = air_date
-        self.episode = episode
+    def __init__(self):
+        self.name = None
+        self.air_date = None
+        self.episode = None
         self.chars_list = []
         self.chars = None
-
-class EpisodeBuilder:
-    def __init__(self):
-        self.eps = {}
 
     def load_ep(self, ep):
         response = r.get('https://rickandmortyapi.com/api/episode/' + str(ep))
         if response.status_code == 200:
             data = response.json()
-            name = data['name']
-            air_date = data['air_date']
-            episode = data['episode']
+            self.name = data['name']
+            self.air_date = data['air_date']
+            self.episode = data['episode']
             chars = []
             for c in data['characters']:
                 chars.append(int(c[42::]))
             segmented_char_list = list(divider(chars, 20))
-            new_epi = Episode(name, air_date, episode)
-            new_epi.chars_list = segmented_char_list
+            self.chars_list = segmented_char_list
             epChars = CharDict()
-            for x in new_epi.chars_list:
+            for x in self.chars_list:
                 epChars.add_mult_char(x)
-            new_epi.chars = epChars
-            self.eps[ep] = new_epi
-        
-    def view_eps(self):
-        for e in self.eps.values():
-            print(f'{e.name}, {e.air_date}, \n{e.chars_list}, \n{e.chars}')
-    
-        
-
-        
-
-        
+            self.chars = epChars
             
+    def view_ep(self):
+        print(f'{self.name}, {self.air_date}, \n{self.chars_list}, \n{self.chars}')
 
-
-
-
-
-
-
+    def view_ep_chars(self):
+        pass
     
-
-
-
-
-        

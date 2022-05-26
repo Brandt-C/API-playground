@@ -36,19 +36,33 @@
 {% block content2 %}
 <div class="container-fluid">
   <div class="row">
-  <form method="POST">
-    <div id="epform" class="form-group">
-      <fieldset id="ep-choice">
-        {{ epform.ep_choice.label }}
-        {{ epform.ep_choice }}
-      </fieldset>
-      <br>
-      {{ epform.submit }}
+    <form method="POST">
+      <div id="epform" class="form-group">
+        <fieldset id="ep-choice">
+          {{ epform.ep_choice.label }}
+          {{ epform.ep_choice }}
+        </fieldset>
+        <br>
+        {{ epform.submit }}
+      </div>
+    </form>
+  </div>
+  <div class="row justify-content-center">
+    {% for c in epi.chars.chars.values() %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ c.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h4 class="card-title">{{c.name}}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Status: {{c.status}}</li>
+        <li class="list-group-item">Species: {{c.species}}</li>
+        <li class="list-group-item">Gender: {{c.gender}}</li>
+        <li class="list-group-item">Origin: {{c.origin}}</li>
+        </ul>
     </div>
-  </form>
-  </div>
-  <div class="row">
-    {% for  %}
-  </div>
+    {% endfor %}
+    </div>
+
 </div>
 {% endblock %}
