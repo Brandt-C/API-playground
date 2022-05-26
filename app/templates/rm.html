@@ -35,6 +35,8 @@
 
 {% block content2 %}
 <div class="container-fluid">
+  <h3>Episode Builder:</h3>
+  <p>Select an episode to see summary information and all of the characters. </p>
   <div class="row">
     <form method="POST">
       <div id="epform" class="form-group">
@@ -47,7 +49,15 @@
       </div>
     </form>
   </div>
+  {% if epi.name %}
   <div class="row justify-content-center">
+    <h2><strong>{{epi.name}}</strong></h2>
+    <h5>{{epi.episode}}</h5>
+    <h5>{{epi.air_date}}</h5>
+  </div>
+  {% endif %}
+  <div class="row justify-content-center">
+    {% if epi.chars.chars %}
     {% for c in epi.chars.chars.values() %}
     <div class="card" style="width: 18rem;">
         <img src="{{ c.image }}" class="card-img-top" alt="...">
@@ -62,7 +72,52 @@
         </ul>
     </div>
     {% endfor %}
+    {% endif %}
     </div>
-
+<hr>
 </div>
+{% endblock %}
+
+{% block content3 %}
+<div class="container-fluid">
+  <h3>Location Builder:</h3>
+  <p>Select a location to see summary information and all of its residents. </p>
+  <div class="row">
+    <form method="POST">
+      <div id="epform" class="form-group">
+        <fieldset id="ep-choice">
+          {{ locform.loc_choice.label }}
+          {{ locform.loc_choice }}
+        </fieldset>
+        <br>
+        {{ locform.submit }}
+      </div>
+    </form>
+  </div>
+  {% if loc.name %}
+  <div class="row justify-content-center">
+    <h2><strong>{{loc.name}}</strong></h2>
+    <h5>{{loc.type}}</h5>
+    <h5>{{loc.dimension}}</h5>
+  </div>
+  {% endif %}
+  <div class="row justify-content-center">
+    {% if loc.residents.chars %}
+    {% for c in loc.residents.chars.values() %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ c.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h4 class="card-title">{{c.name}}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Status: {{c.status}}</li>
+        <li class="list-group-item">Species: {{c.species}}</li>
+        <li class="list-group-item">Gender: {{c.gender}}</li>
+        <li class="list-group-item">Origin: {{c.origin}}</li>
+        </ul>
+    </div>
+    {% endfor %}
+    {% endif %}
+    </div>
+<hr>
 {% endblock %}

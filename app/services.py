@@ -63,10 +63,6 @@ class CharDict:
             new_char = Char(name, status, species, gender, origin, image, id)
             self.chars[id] = new_char 
 
-    # def view_chars(self):
-    #     for x in self.chars.values():
-    #         print(f'')
-    
 class Episode:
     def __init__(self):
         self.name = None
@@ -95,6 +91,28 @@ class Episode:
     def view_ep(self):
         print(f'{self.name}, {self.air_date}, \n{self.chars_list}, \n{self.chars}')
 
-    def view_ep_chars(self):
-        pass
+class Location:
+    def __init__(self):
+        self.name = None
+        self.type = None
+        self.dimension = None
+        self.residents_list = []
+        self.residents = None
+
+    def load_loc(self, loc):
+        response = r.get('https://rickandmortyapi.com/api/location/' + str(loc))
+        if response.status_code == 200:
+            data = response.json()
+            self.name = data['name']
+            self.type = data['type']
+            self.dimension = data['dimension']
+            chars = []
+            for c in data['residents']:
+                chars.append(int(c[42::]))
+            segmented_char_list = list(divider(chars, 20))
+            self.residents_list = segmented_char_list
+            epChars = CharDict()
+            for x in self.residents_list:
+                epChars.add_mult_char(x)
+            self.residents = epChars
     
