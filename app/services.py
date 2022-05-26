@@ -1,7 +1,9 @@
 import requests as r
 from random import randrange
 
-
+def divider(arr, num):
+    for x in range(0, len(arr), num):
+        yield arr[x:x + num]
 
 class Char:
     def __init__(self, name, status, species, gender, origin, image, id):
@@ -66,7 +68,8 @@ class Episode:
         self.name = name
         self.air_date = air_date
         self.episode = episode
-        self.chars = CharDict()
+        self.chars_list = []
+        self.chars = None
 
 class EpisodeBuilder:
     def __init__(self):
@@ -79,20 +82,32 @@ class EpisodeBuilder:
         name = data['name']
         air_date = data['air_date']
         episode = data['episode']
-        chars = {}
+        chars = []
         for c in data['characters']:
-            chars[int(c[42::])] = None
+            chars.append(int(c[42::]))
+        segmented_char_list = list(divider(chars, 20))
         new_epi = Episode(name, air_date, episode)
-        new_epi.chars = chars
+        new_epi.chars_list = segmented_char_list
+        epChars = CharDict()
+        for x in new_epi.chars_list:
+            epChars.add_mult_char(x)
+        new_epi.chars = epChars
         self.eps[ep] = new_epi
         
     def view_eps(self):
         for e in self.eps.values():
-            print(f'{e.name}, {e.air_date}, \n{e.chars.keys()}')
+            print(f'{e.name}, {e.air_date}, \n{e.chars_list}, \n{e.chars}')
     
-    def load_ep_chars(self, sel):
-        if len(dic) <= 20:
-            pass
+    # def load_ep_chars(self, arr):
+        
+    #     for a in arr:
+    #         epChars.add_mult_char(a)
+        
+
+        
+
+        
+            
 
 
 
