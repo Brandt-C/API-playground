@@ -31,5 +31,32 @@
 </div>
 <hr>
 {% endfor %}
+{% endblock %}
 
+{% block content2 %}
+<div class="container-fluid">
+<!-- <div class="input-group mb-3">
+  <button class="btn btn-outline-secondary" type="button">Build Episode:</button>
+  
+  <select class="form-select" id="inputGroupSelect03" >
+    <option selected>Choose...</option>
+    <option value="{{ epform.ep_choice }}"></option>
+    <option value="2"></option>
+    <option value="3"></option>
+  </select>
+</div> -->
+
+<form method="POST">
+  <div class="row">
+  <div id="epform" class="form-group">
+    <fieldset id="ep-choice">
+      {{ epform.ep_choice.label }}
+      {{ epform.ep_choice }}
+    </fieldset>
+    <br>
+    {{ epform.submit }}
+  </div>
+  </div>
+</form>
+</div>
 {% endblock %}
