@@ -9,9 +9,10 @@
 {% for c in new.chars %}
 <div class="container-fluid">
   <div class="row m-auto">
-    <h1>Let's play with the Rick and Morty API!</h1>
-    <h4>A random character:</h4>
-    <p>Each time the page is reloaded you get a new one!</p>
+    <h1>Some fun with the Rick and Morty API!</h1>
+    <br>
+    <h3>A random character:</h3>
+    <br>
     <div id="rand-card" class="card m-auto" style="max-width: 540px;">
       <div class="row g-0">
         <div class="col-md-4">
@@ -49,9 +50,10 @@
       </div>
     </form>
   </div>
+  <br>
   {% if epi.name %}
   <div class="row justify-content-center">
-    <h2><strong>{{epi.name}}</strong></h2>
+    <h1><strong>{{epi.name}}</strong></h1>
     <h5>{{epi.episode}}</h5>
     <h5>{{epi.air_date}}</h5>
   </div>

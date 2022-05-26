@@ -21,10 +21,7 @@ def rm():
     locform = Locform()
     loc = Location()
     if request.method == 'POST':
-        
         epi.load_ep(epform.data['ep_choice'])
         loc.load_loc(locform.data['loc_choice'])
-        # epi.view_eps()
         return render_template('rm.html', new=new, epi=epi, epform=epform, locform=locform, loc=loc)
-    # epi.load_ep(8)
     return render_template('rm.html', new=new, epi=epi, epform=epform, locform=locform, loc=loc)
