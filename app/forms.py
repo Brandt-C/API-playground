@@ -5,4 +5,4 @@ from wtforms import SelectField, SubmitField
 class Epform(FlaskForm):
 
     ep_choice = SelectField('Select Episode', choices=[str(i) for i in range(1, 51 )], coerce=int, )
-    submit = SubmitField()
+    submit = SubmitField("Build Episode")
