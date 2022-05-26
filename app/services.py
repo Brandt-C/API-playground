@@ -66,7 +66,7 @@ class Episode:
         self.name = name
         self.air_date = air_date
         self.episode = episode
-        self.chars = {}
+        self.chars = CharDict()
 
 class EpisodeBuilder:
     def __init__(self):
@@ -90,8 +90,8 @@ class EpisodeBuilder:
         for e in self.eps.values():
             print(f'{e.name}, {e.air_date}, \n{e.chars.keys()}')
     
-    def load_ep_chars(self, arr):
-        if len(arr) <= 20:
+    def load_ep_chars(self, sel):
+        if len(dic) <= 20:
             pass
 
 
