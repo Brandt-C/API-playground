@@ -16,6 +16,7 @@ def rm():
     new = CharDict()
     new.add_rand_char()
     epi = EpisodeBuilder()
-    epi.load_ep(1)
+    epi.load_ep(8)
+    epi.view_eps()
     
     return render_template('rm.html', new=new, epi=epi)

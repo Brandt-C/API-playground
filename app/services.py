@@ -66,7 +66,7 @@ class Episode:
         self.name = name
         self.air_date = air_date
         self.episode = episode
-        self.chars = []
+        self.chars = {}
 
 class EpisodeBuilder:
     def __init__(self):
@@ -79,13 +79,22 @@ class EpisodeBuilder:
         name = data['name']
         air_date = data['air_date']
         episode = data['episode']
-        chars = []
+        chars = {}
         for c in data['characters']:
-            chars.append(int(c[42::]))
+            chars[int(c[42::])] = None
         new_epi = Episode(name, air_date, episode)
         new_epi.chars = chars
         self.eps[ep] = new_epi
         
+    def view_eps(self):
+        for e in self.eps.values():
+            print(f'{e.name}, {e.air_date}, \n{e.chars.keys()}')
+    
+    def load_ep_chars(self, arr):
+        if len(arr) <= 20:
+            pass
+
+
 
 
 
