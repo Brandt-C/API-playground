@@ -10,3 +10,10 @@
     align-content: center;
 }
 */
+
+.card {
+    padding: 2px;
+    margin: 2px;
+    background-color: rgb(207, 207, 207);
+    
+}
