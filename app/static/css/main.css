@@ -34,3 +34,14 @@ h3 {
     border: 5px;
     border-color: black;
 }
+
+#bio {
+    background-color: rgb(44, 44, 44);
+    max-width: 55%;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    word-spacing: 115%;
+    
+}
+

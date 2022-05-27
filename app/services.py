@@ -118,7 +118,7 @@ class Location:
     
 class Bio():
     def __init__(self):
-        self.nt = {'xs' : "Brandt work with computer",
+        self.nt = {'xs' : "Brandt work computer",
             'tldr' : "Brandt likes building funcitonal things with tech!",
             'l' : "Brandt enjoys the functional aspect of creating things on and off of the web that benefit the end user.  He really likes working with APIs (hence the title on your tab at the top here).  This space serves as his playground to show some of what he can do!",
             'xl' : "Brandt enjoys the functional aspect of creating things on and off of the web that benefit the end user.  He really likes working with APIs (hence the title on your tab at the top here).  This space serves as his playground to show some of what he can do! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -126,7 +126,7 @@ class Bio():
         self.t = {'xs' : "Brandt builds full-s",
             "tldr" : "Brandt builds full-stack web applications- like this one!",
             'l' : "Brandt really enjoys the functional aspect of using code to build and create.  This includes sites, apps, software, and some nerdy problem-solving.  He particularly enjoys Python, working with APIs, and being around good people!",
-            'xl' : "Brandt really enjoys the functional aspect of using code to build and create.  This includes sites, apps, software, and some nerdy problem-solving.  He particularly enjoys Python, working with APIs, and being around good people!  Here's a bunch of industry buzzwords and technologies that have relevance to him: Python, JavaScript, Bootstrap, Flask, React, DBeaver, SQL, PostgreSQL, Firebase, Jinja, Werkzueg, Psycopg2, SQLAlchemy, Heroku, VS Code, Jupyter notebook, OOP, Pandas, Numpy, Git, HTML, CSS, more.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. An necis mi fili, quantilla prudentia mundus regatur. Mi in nulla posuere sollicitudin. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum."
+            'xl' : "Brandt really enjoys the functional aspect of using code to build and create.  This includes sites, apps, software, and some nerdy problem-solving.  He particularly enjoys Python, working with APIs, and being around good people!  Here's a bunch of industry buzzwords and technologies that have relevance to him: Python, JavaScript, Bootstrap, Flask, React, DBeaver, SQL, PostgreSQL, Firebase, Jinja, Werkzueg, Psycopg2, SQLAlchemy, Heroku, VS Code, Jupyter notebook, OOP, Pandas, Numpy, Git, HTML, CSS, more.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. An necis, mi fili, quantilla prudentia mundus regatur. Mi in nulla posuere sollicitudin. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum."
         }
     def convert(self, tl, l):
         if not tl and l:
