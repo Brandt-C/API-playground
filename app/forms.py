@@ -3,7 +3,6 @@ from wtforms import SelectField, SubmitField, RadioField
 # from wtforms.validators import DataRequired
 
 class Epform(FlaskForm):
-
     ep_choice = SelectField('Select Episode', choices=[str(i) for i in range(1, 52 )], coerce=int, )
     submit = SubmitField("Build Episode")
 

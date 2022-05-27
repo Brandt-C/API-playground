@@ -51,32 +51,41 @@
     <h3>I'm Brandt.</h3>
     <h5>I make things with technology.</h5>
     <h6><small>I don't love talking about myself but:</small></h6>
+    <hr>
   </div>
   {% endblock %}
   {% block content2 %}
-  <div class="container-fluid">
-    <h3>More about me!</h3>
-    <div class="row">
+  <h3>More about me!</h3>
+  <div id="bio-choice" class="container-fluid">
+    
+    <div class="d flex-row m-auto">
       <form method="POST">
         <div id="typeform" class="form-group">
-          <div class="col">
+          <div class="p-2">
             <fieldset id="type_choice">
               {{ form.type_choice.label }}
               {{ form.type_choice }}
             </fieldset>
+            </div>
+            <div class="p-2">
             <fieldset id="l_choice">
               {{ form.l_choice.label }}
               {{ form.l_choice }}
             </fieldset>
+            </div>
+            <div class="p-2">
             {{ form.submit }}
           </div>
         </div>
       </form>
     </div>
   </div>
+  <hr>
   {% endblock %}
   {% block content3 %}
-
+  <div class="container-fluid">
+  <h6 id="bio-body">{{ bb }}</h6>
+  </div>
   {% endblock %}
 </body>
 <footer>&copy; Brandt Carlson 2022</footer>

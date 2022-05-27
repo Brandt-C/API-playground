@@ -3,7 +3,7 @@ from flask import render_template, request
 import requests as r
 from random import randrange
 
-from app.services import CharDict, Episode, Location
+from app.services import CharDict, Episode, Location, Bio
 from .forms import BioForm, Epform, Locform
 
 
@@ -11,7 +11,13 @@ from .forms import BioForm, Epform, Locform
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = BioForm()
-    return render_template('index.html', form=form)
+    bio = Bio()
+    bb = bio.nt['xs']
+    if request.method == 'POST':
+        bb = bio.convert(form.data['type_choice'], form.data['l_choice'])
+        return render_template('index.html', form=form, bio=bio, bb=bb)
+    
+    return render_template('index.html', form=form, bio=bio, bb=bb)
 
 @app.route('/rm', methods=['GET', 'POST'])
 def rm():

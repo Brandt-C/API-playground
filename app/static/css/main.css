@@ -24,3 +24,13 @@ footer {
 #bhead {
     text-align: center;
 }
+h3 {
+    text-align: center;
+}
+#bio-choice {
+    display: flex;
+}
+#typeform {
+    border: 5px;
+    border-color: black;
+}
