@@ -4,13 +4,14 @@ import requests as r
 from random import randrange
 
 from app.services import CharDict, Episode, Location
-from .forms import Epform, Locform
+from .forms import BioForm, Epform, Locform
 
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+    form = BioForm()
+    return render_template('index.html', form=form)
 
 @app.route('/rm', methods=['GET', 'POST'])
 def rm():
