@@ -30,23 +30,22 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/rm">Rick + Morty</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" disabled="true">More to come. . .</a>
+            <a class="nav-link" href="#" disabled="true">About</a>
           </li>
         </ul>
         <span class="navbar-text">
-          Navbar text with an inline element
+        <a href="https://github.com/Brandt-C"><img src="../static/images/GitHub-Mark-Light-32px.png" alt="Github logo link" style="width:32px;height:32px;" ></a>
+        <a href="https://www.linkedin.com/in/brandt-carlson-51735625/"><img src="../static/images/SeekPng.com_linkedin-logo-transparent-png_5538632.png" alt="Linked in logo link" style="width:32px;height:32px;" ></a>
         </span>
       </div>
     </div>
   </nav>
   {% block content %}
   <div id="bhead" class="container-fluid">
+    <img id="headshot" src="../static/images/headshot_LI_rs.jpg" alt="Brandt headshot" class="img-fluid rounded-circle border border-4 border-dark mt-2">
     <h1>Oh, Hi there!</h1>
     <h3>I'm Brandt.</h3>
     <h5>I make things with technology.</h5>
@@ -61,19 +60,19 @@
     <div class="d flex-row m-auto">
       <form method="POST">
         <div id="typeform" class="form-group">
-          <div class="p-2">
+          <div class="col p-0">
             <fieldset id="type_choice">
               {{ form.type_choice.label }}
               {{ form.type_choice }}
             </fieldset>
             </div>
-            <div class="p-2">
+            <div class="col p-0">
             <fieldset id="l_choice">
               {{ form.l_choice.label }}
               {{ form.l_choice }}
             </fieldset>
             </div>
-            <div class="p-2">
+            <div class="col p-0">
             {{ form.submit }}
           </div>
         </div>

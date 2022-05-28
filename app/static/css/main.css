@@ -45,3 +45,17 @@ h3 {
     
 }
 
+#headshot {
+    max-width: 19%;
+    height: auto;
+}
+
+#headshot:hover {
+    transform: scaleX(-1);
+}
+#bhead {
+    float: left;
+}
+#bwel {
+    align-items: center;
+}
