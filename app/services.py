@@ -1,10 +1,13 @@
 import requests as r
 from random import randrange
 
+
+# utility for segmenting large character lists in episode/location classes
 def divider(arr, num):
     for x in range(0, len(arr), num):
         yield arr[x:x + num]
 
+# basic setup for the character class that will be used throughout the page
 class Char:
     def __init__(self, name, status, species, gender, origin, image, id):
         self.name = name
@@ -15,10 +18,12 @@ class Char:
         self.image = image
         self.id = id
 
+# setup for loading/storing characters
 class CharDict:
     def __init__(self):
         self.chars = {}
     
+    # method for api call to add a single character
     def add_1_char(self, id):
         response = r.get('https://rickandmortyapi.com/api/character/' + str(id) + "/")
         if response.status_code == 200:
@@ -33,6 +38,7 @@ class CharDict:
         new_char = Char(name, status, species, gender, origin, image, id)
         self.chars[id] = new_char    
 
+    # method for getting a single random character, called everytime the page loads
     def add_rand_char(self):
         x = randrange(1, 826)
         response = r.get('https://rickandmortyapi.com/api/character/' + str(x) + "/")
@@ -48,6 +54,7 @@ class CharDict:
         new_char = Char(name, status, species, gender, origin, image, id)
         self.chars[id] = new_char 
 
+    # method for calling up to 20 characters with one api call
     def add_mult_char(self, arr):
         response = r.get('https://rickandmortyapi.com/api/character/' + str(arr))
         if response.status_code == 200:
@@ -63,6 +70,7 @@ class CharDict:
             new_char = Char(name, status, species, gender, origin, image, id)
             self.chars[id] = new_char 
 
+# establishing the attributes of the episode itself and associated characters
 class Episode:
     def __init__(self):
         self.name = None
@@ -71,6 +79,7 @@ class Episode:
         self.chars_list = []
         self.chars = None
 
+    # api call to get/collate data for an episode
     def load_ep(self, ep):
         response = r.get('https://rickandmortyapi.com/api/episode/' + str(ep))
         if response.status_code == 200:
@@ -87,9 +96,10 @@ class Episode:
             for x in self.chars_list:
                 epChars.add_mult_char(x)
             self.chars = epChars
-            
+    # utility for viewing aspects of the class, used mostly for testing        
     def view_ep(self):
         print(f'{self.name}, {self.air_date}, \n{self.chars_list}, \n{self.chars}')
+
 
 class Location:
     def __init__(self):
