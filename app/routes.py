@@ -1,7 +1,6 @@
 from app import app
 from flask import render_template, request
-import requests as r
-from random import randrange
+
 
 from app.services import CharDict, Episode, Location, Bio
 from .forms import BioForm, Epform, Locform

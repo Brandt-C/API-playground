@@ -100,7 +100,7 @@ class Episode:
     def view_ep(self):
         print(f'{self.name}, {self.air_date}, \n{self.chars_list}, \n{self.chars}')
 
-
+# establishing attributes and characters for building out a location
 class Location:
     def __init__(self):
         self.name = None
@@ -126,6 +126,7 @@ class Location:
                 epChars.add_mult_char(x)
             self.residents = epChars
     
+# created a class to deal with changing the text of the bio section on landing page
 class Bio():
     def __init__(self):
         self.nt = {'xs' : "Brandt work computer",
@@ -138,6 +139,7 @@ class Bio():
             'l' : "Brandt really enjoys the functional aspect of using code to build and create.  This includes sites, apps, software, and some nerdy problem-solving.  He particularly enjoys Python, working with APIs, and being around good people!",
             'xl' : "Brandt really enjoys the functional aspect of using code to build and create.  This includes sites, apps, software, and some nerdy problem-solving.  He particularly enjoys Python, working with APIs, and being around good people!  Here's a bunch of industry buzzwords and technologies that have relevance to him: Python, JavaScript, Bootstrap, Flask, React, DBeaver, SQL, PostgreSQL, Firebase, Jinja, Werkzueg, Psycopg2, SQLAlchemy, Heroku, VS Code, Jupyter notebook, OOP, Pandas, Numpy, Git, HTML, CSS, more.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. An necis, mi fili, quantilla prudentia mundus regatur. Mi in nulla posuere sollicitudin. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum."
         }
+    #method allows change or default text to be stored as variable
     def convert(self, tl, l):
         if not tl and l:
             return self.nt['xs']
