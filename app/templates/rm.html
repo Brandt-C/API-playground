@@ -3,7 +3,7 @@
 {% block css %}
 <link rel="stylesheet" href="../static/css/rm.css">
 {% endblock %}
-
+<!--  Maybe add a little explanation here to clarify what/why on this page???-->
 {% block content %}
 
 {% for c in new.chars %}
@@ -63,7 +63,7 @@
     {% for c in epi.chars.chars.values() %}
     <div class="card" style="width: 18rem;">
         <img src="{{ c.image }}" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div id="cb-char" class="card-body">
         <h4 class="card-title">{{c.name}}</h4>
         </div>
         <ul class="list-group list-group-flush">
