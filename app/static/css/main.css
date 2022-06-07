@@ -72,3 +72,9 @@ h3 {
     background-color: black;
     color: white;
 }
+#type_choice {
+    list-style-type: none;
+}
+#l_choice {
+    list-style-type: none;
+}
