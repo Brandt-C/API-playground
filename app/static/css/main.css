@@ -2,14 +2,17 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
+#logo {
+    border-radius: 5px;
+}
 
 h1 {
     text-align: center;
     font-weight: 800;
-    background-color: rgb(241, 217, 189);
+    background-color: rgb(241, 152, 97);
 }
 body {
-    background-color: rgb(241, 217, 189);
+    background-color: rgb(241, 152, 97);
 }
 footer {
     text-align: center;
@@ -58,4 +61,14 @@ h3 {
 }
 #bwel {
     align-items: center;
+}
+#submit {
+    background-color: rgb(42, 41, 41);
+    color:rgb(241, 217, 189);
+    border-radius: 8px;
+    align-items: center;
+}
+#submit:hover {
+    background-color: black;
+    color: white;
 }
