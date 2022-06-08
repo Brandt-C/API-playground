@@ -1,0 +1,28 @@
+h3, h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+#formrow {
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+    
+}
+::placeholder {
+    color: white;
+}
+#season, #round {
+    display: block;
+    margin: auto;
+    background-color: rgb(108,117,125);
+    border-radius: 8px;
+}
+
+
+#range {
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+}
+
+

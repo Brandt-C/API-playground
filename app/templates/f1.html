@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+
+{% block css %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+<script src="../static/js/f1.js" defer></script>
+<link rel="stylesheet" href="../static/css/f1.css">
+
+{% endblock %}
+
+
+
+{% block content %}
+<h1>F1 data</h1>
+<div class="container">
+<h3>Top driver standings:</h3>
+    <section>
+        <form id="dform">
+            <div id="formrow " class="form-group mx-auto">
+                <div class="input-group mb-3 season">
+                    <!--<label for="season">season</label>-->
+                    <input style="text-align:center;" type="text" class="text" id="season"
+                        placeholder="Season (1950-2022)">
+                </div>
+                <br>
+                <div class="input-group mb-3 round">
+                    <!--<label for="round">status</label>-->
+                    <input style="text-align:center;" type="text" class="text" id="round"
+                        placeholder="Enter round (1- ?)">
+                </div>
+                <div id="range" class="input-group mb-3 results">
+                    <label id="results-label" for="results" class="form-label"># of results:</label>
+                    <input class="form-range" type="range" id="results" min="1" max="20" step="1">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button id="f1-btn" type="submit" class="btn btn-primary col-2 m-3 mt-3">Get Table</button>
+
+                <button id="f1-btn" class="btn btn-primary col-2 m-3 mt-3" onclick="clearTable();">Clear Table</button>
+            </div>
+        </form>
+        <br>
+    </section>
+    <table id="f1-table" class="table table-dark">
+        <thead>
+        </thead>
+        <tbody id="drivertable">
+            <tr>
+                <th><b>#</b></th>
+                <th colspan="2"><b>Driver</b></th>
+                <th><b>Nationality</b></th>
+                <th><b>Sponsor</b></th>
+                <th><b>Points</b></th>
+            </tr>
+            <!--<tr>
+                    <th scope="row">1</th>
+                    <td id="name" colspan="2" class="table-active"></td>
+                    <td id="nationality"></td>
+                    <td id="sponsor"></td>
+                    <td id="points"></td>
+                </tr>-->
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block content2 %}
+{% endblock %}
+
+{% block content3 %}
+{% endblock %}
+
+{% block content4 %}
+{% endblock %}

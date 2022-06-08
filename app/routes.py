@@ -31,3 +31,7 @@ def rm():
         loc.load_loc(locform.data['loc_choice'])
         return render_template('rm.html', new=new, epi=epi, epform=epform, locform=locform, loc=loc)
     return render_template('rm.html', new=new, epi=epi, epform=epform, locform=locform, loc=loc)
+
+@app.route('/f1')
+def f1():
+    return render_template('f1.html')

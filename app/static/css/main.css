@@ -62,13 +62,13 @@ h3 {
 #bwel {
     align-items: center;
 }
-#submit {
+#submit, #f1-btn {
     background-color: rgb(42, 41, 41);
     color:rgb(241, 217, 189);
     border-radius: 8px;
     align-items: center;
 }
-#submit:hover {
+#submit, #f1-btn:hover {
     background-color: black;
     color: white;
 }
