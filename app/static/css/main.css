@@ -68,7 +68,11 @@ h3 {
     border-radius: 8px;
     align-items: center;
 }
-#submit, #f1-btn:hover {
+#submit:hover {
+    background-color: black;
+    color: white;
+}
+#f1-btn:hover {
     background-color: black;
     color: white;
 }
