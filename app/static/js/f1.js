@@ -25,6 +25,15 @@ let loadTable = async (season, round, results) => {
         return
     }
     console.log(data)
+    let header = `
+    <tr>
+        <th><b>#</b></th>
+        <th colspan="2"><b>Driver</b></th>
+        <th><b>Nationality</b></th>
+        <th><b>Sponsor</b></th>
+        <th><b>Points</b></th>
+    </tr>`
+    document.getElementById('drivertable').insertAdjacentHTML('afterbegin', header);
     for (i=0; i<results-1; i++) {
     let new_row = `
     <tr>
