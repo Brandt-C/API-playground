@@ -1,106 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends './components/layout.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandt's API Playground</title>
-  <link rel="icon" href="../static/images/favi32.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../static/css/main.css">
-  {% block css %}
-  
-  {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../static/css/main.css">
+{% endblock %}
 
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-    <div class="container-fluid">
-      <a  class="navbar-brand" href="/"><img id="logo" class="img-fluid" height="30" width="45" src="../static/images/logo1st.png"
-          alt="logo for Brandt" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/rm">Rick + Morty</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/f1" >F1 Data</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-          <a href="https://github.com/Brandt-C"><img src="../static/images/GitHub-Mark-Light-32px.png"
-              alt="Github logo link" style="width:32px;height:32px;"></a>
-          <a href="https://www.linkedin.com/in/brandt-carlson-51735625/"><img
-              src="../static/images/SeekPng.com_linkedin-logo-transparent-png_5538632.png" alt="Linked in logo link"
-              style="width:32px;height:32px;"></a>
-          <a href="mailto: Brandt.Carlson11@gmail.com"><img src="../static/images/email-logo.png" alt="click to email"
-              style="width:32px;height:32px;"></a>
-        </span>
-      </div>
-    </div>
-  </nav>
-  {% block content %}
-  <div id="bhead" class="container-fluid">
-    <img id="headshot" src="../static/images/headshot_LI_rs.jpg" alt="Brandt headshot"
-      class="img-fluid rounded-circle border border-4 border-dark mt-2 ">
-    <h1>Oh, Hi there!</h1>
-    <h3>I'm Brandt.</h3>
-    <h5>I make things with technology.</h5>
-    <h6><small>I don't love talking about myself but:</small></h6>
-    <hr>
-  </div>
-  {% endblock %}
-  {% block content2 %}
-  <h3>More about me!</h3>
-  <div id="bio-choice" class="container-fluid">
-
-    <div class="d flex-row m-auto">
-      <form method="POST">
-        <div id="typeform" class="form-group">
-          <div class="col p-0">
-            <fieldset id="type_choice">
-              {{ form.type_choice.label }}
-              {{ form.type_choice }}
-            </fieldset>
-          </div>
-          <div class="col p-0">
-            <fieldset id="l_choice">
-              {{ form.l_choice.label }}
-              {{ form.l_choice }}
-            </fieldset>
-          </div>
-          <div class="col p-0">
-            {{ form.submit }}
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+{% block content %}
+<div id="bhead" class="container-fluid">
+  <img id="headshot" src="../static/images/headshot_LI_rs.jpg" alt="Brandt headshot"
+    class="img-fluid rounded-circle border border-4 border-dark mt-2 ">
+  <h1>Oh, Hi there!</h1>
+  <h3>I'm Brandt.</h3>
+  <h5>I make things with technology.</h5>
   <hr>
-  {% endblock %}
-  {% block content3 %}
-  <div id="bio" class="container-fluid shadow-lg mb-3 rounded-3">
-    <h6 id="bio-body">{{ bb }}</h6>
+</div>
+{% endblock %}
+{% block content2 %}
+<h3>More about me!</h3>
+<div id="bio-choice" class="container-fluid">
+
+  <div class="d flex-row m-auto">
+    <form method="POST">
+      <div id="typeform" class="form-group">
+        <div class="col p-0">
+          <fieldset id="type_choice">
+            {{ form.type_choice.label }}
+            {{ form.type_choice }}
+          </fieldset>
+        </div>
+        <div class="col p-0">
+          <fieldset id="l_choice">
+            {{ form.l_choice.label }}
+            {{ form.l_choice }}
+          </fieldset>
+        </div>
+        <div class="col p-0">
+          {{ form.submit }}
+        </div>
+      </div>
+    </form>
   </div>
-  {% endblock %}
+</div>
+<hr>
+{% endblock %}
+{% block content3 %}
+<div id="bio" class="container-fluid shadow-lg mb-3 rounded-3">
+  <h6 id="bio-body">{{ bb }}</h6>
+</div>
+{% endblock %}
 
-  {% block content4 %}
-  <div class="container">
+{% block content4 %}
+<div class="container">
 
 
-  </div>
+</div>
 
-  {% endblock %}
+{% endblock %}
 </body>
 <footer>&copy; Brandt Carlson 2022</footer>
 
